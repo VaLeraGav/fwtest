@@ -2,6 +2,8 @@
 
 use LDAP\Result;
 
+echo "test git";
+
 // rtrim -регистронезависим 
 $query = rtrim($_SERVER["QUERY_STRING"]);
 
