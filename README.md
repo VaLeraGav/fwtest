@@ -9,7 +9,7 @@
  <h1 align="center">Создание собственного фреймворка.</h1>
 Цель: реализовать собственный фреймфорк.
 <br>
-Видео: [Link text Here](https://www.youtube.com/playlist?list=PLD-piGJ3Dtl1gX1wh22vBeeg6gMP1VlnW)
+Видео: [WebForMySelf](https://www.youtube.com/playlist?list=PLD-piGJ3Dtl1gX1wh22vBeeg6gMP1VlnW)
 
 - [x] Придумать внешний вид резюме
 - [ ] Написать основные категории

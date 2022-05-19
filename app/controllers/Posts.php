@@ -1,9 +1,8 @@
 <?php 
 
 namespace app\controllers;
-use vendor\core\base\Controller;
 
-class Posts extends Controller{
+class Posts extends App{
 
     // перенесли в Controllers.php
     // public $route= []; // получаем controllers, action

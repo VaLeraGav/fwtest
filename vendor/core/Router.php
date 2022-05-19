@@ -21,7 +21,7 @@ class Router
     {
         foreach (self::$routes as $pattern => $route)
             // if ($url === $patern)
-            // patern url mathes-сохнаем в эту переменную
+            // patern и url, mathes-сохнаем в эту переменную
             // ограничители шаблона "#...#i" i-регистронезависим 
             if (preg_match("#$pattern#i", $url, $matches)) {
                 // debug($matches);
@@ -47,7 +47,7 @@ class Router
                 self::$route = $route;
                 return true;
             }
-        return false; // если адрес несущесвующий был введен  
+        return false; // если был введен несущесвующий адрес  
     }
 
     // отправка, перенаправляет url по коректному маршруру 
@@ -55,18 +55,17 @@ class Router
     public static function dispatch($url)
     {
         $url = self::removeQueryString($url);
-        var_dump($url);
-
         if (self::matchRoute($url)) {
             // 'app\controllers\\'- нужно для пространства имен, добавили после добавления nemespace
             $controller = 'app\controllers\\' . self::$route['controller'];
             // Проверяет, был ли определен класс
             if (class_exists($controller)) {
                 // проверка на существоание action 
-                $cObj = new $controller(self::$route); //передает информацию в контроллер 
-                $action = self::lowerCamelCase(self::$route['action']) . 'Action'; //Action для запрета доступа
+                $cObj = new $controller(self::$route); // передает информацию в контроллер 
+                $action = self::lowerCamelCase(self::$route['action']) . 'Action'; // Action для запрета доступа
                 if (method_exists($cObj, $action)) {
                     $cObj->$action(); // не забыть ()
+                    $cObj->getView();
                 } else {
                     echo "<br>метод <b>$controller::$action</b> не найден";
                 }
@@ -105,7 +104,6 @@ class Router
             }
         }
     }
-
 
     // для отладки
     public static function getRoutes()

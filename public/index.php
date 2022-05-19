@@ -11,8 +11,9 @@ define('WWW', __DIR__);
 define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__)); //выходит из папки public
 define('APP', dirname(__DIR__) . '/app');
+define('LAYOUT', 'default');
 
-require '../vendor/core/Router.php';
+
 require '../vendor/libs/function.php';
 
 
@@ -21,7 +22,7 @@ require '../vendor/libs/function.php';
 // заменяем на это 
 spl_autoload_register(function ($class) {
     $file = ROOT . '/' . str_replace('\\', '/', $class) . ".php";
-    //$file = APP . "/controllers/$class.php";
+    // $file = APP . "/controllers/$class.php";
     // $file = str_replace('/', '\\', $file);
     if (is_file($file)) {
         require_once $file;
@@ -29,7 +30,7 @@ spl_autoload_register(function ($class) {
 });
 
 Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']); // пробелы влияют на поиск 
-Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action'=>'view']); // twtest.local/page/view/kfk Одно и тоже twtest.local/page/kfk
+Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']); // twtest.local/page/view/kfk Одно и тоже twtest.local/page/kfk
 
 //? defauts routes
 // пустая строка
@@ -40,6 +41,6 @@ Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 // знаки /?..? - необязательном / и action
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
 
-debug(Router::getRoutes());
+// debug(Router::getRoutes());
 
 Router::dispatch($query);
