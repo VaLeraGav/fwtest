@@ -1,8 +1,10 @@
 <?php
 
-use LDAP\Result;
+error_reporting(-1); //для вывода всех ошибок
 
-// rtrim -регистронезависим 
+use vendor\core\Router;
+
+// rtrim - удаляет пробелы
 $query = rtrim($_SERVER["QUERY_STRING"]);
 
 define('WWW', __DIR__);
@@ -18,14 +20,16 @@ require '../vendor/libs/function.php';
 // require '../app/controllers/Posts.php';...
 // заменяем на это 
 spl_autoload_register(function ($class) {
-    $file = APP . "/controllers/$class.php";
-    $file =str_replace('/', '\\',$file);
+    $file = ROOT . '/' . str_replace('\\', '/', $class) . ".php";
+    //$file = APP . "/controllers/$class.php";
+    // $file = str_replace('/', '\\', $file);
     if (is_file($file)) {
         require_once $file;
     }
 });
 
-Router::add('^pages/?(?P<action>[a-z-]+)?$',['controller' => 'Posts', 'action' => 'index']);
+Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']); // пробелы влияют на поиск 
+Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action'=>'view']); // twtest.local/page/view/kfk Одно и тоже twtest.local/page/kfk
 
 //? defauts routes
 // пустая строка
@@ -36,5 +40,6 @@ Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 // знаки /?..? - необязательном / и action
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
 
+debug(Router::getRoutes());
 
 Router::dispatch($query);

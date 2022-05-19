@@ -1,9 +1,9 @@
 <?php
 
+namespace app\controllers;
 
 class PostsNew
 {
-
     public function indexAction()
     {
         echo "PostsNew : index";

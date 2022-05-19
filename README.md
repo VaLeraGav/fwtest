@@ -9,7 +9,7 @@
  <h1 align="center">Создание собственного фреймворка.</h1>
 Цель: реализовать собственный фреймфорк.
 <br>
-Видео: <a hreft= "https://www.youtube.com/user/webformyself">WebForMySelf</a>
+Видео: [Link text Here](https://www.youtube.com/playlist?list=PLD-piGJ3Dtl1gX1wh22vBeeg6gMP1VlnW)
 
 - [x] Придумать внешний вид резюме
 - [ ] Написать основные категории
@@ -78,6 +78,6 @@
 - Урок 21
 - Урок 22
 
-:white_check_mark: Это уже сделано    
+<!-- :white_check_mark: Это уже сделано    
 :negative_squared_cross_mark: Я не буду это делать    
-:black_square_button: делать или не делать, вот в чем вопрос?
+:black_square_button: делать или не делать, вот в чем вопрос? -->

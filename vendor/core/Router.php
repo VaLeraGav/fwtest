@@ -1,5 +1,7 @@
 <?php
 
+namespace vendor\core; // от корня приложения tstest
+
 // от него не будет наследования
 class Router
 {
@@ -37,7 +39,8 @@ class Router
                 if (!isset($route['action'])) {
                     $route['action'] = 'action';
                 }
-                debug($route);
+                $route['controller'] = self::upperCamelCase($route['controller']); // с заглавное буквы 
+                // debug($route);
                 // [comtroller] => post
                 // [action] => per
 
@@ -47,16 +50,20 @@ class Router
         return false; // если адрес несущесвующий был введен  
     }
 
-    // отправка, перенаправляет url по коректному ммаршруру 
+    // отправка, перенаправляет url по коректному маршруру 
     // string $url 
     public static function dispatch($url)
     {
+        $url = self::removeQueryString($url);
+        var_dump($url);
+
         if (self::matchRoute($url)) {
-            $controller = self::upperCamelCase(self::$route['controller']);
+            // 'app\controllers\\'- нужно для пространства имен, добавили после добавления nemespace
+            $controller = 'app\controllers\\' . self::$route['controller'];
             // Проверяет, был ли определен класс
             if (class_exists($controller)) {
                 // проверка на существоание action 
-                $cObj = new $controller;
+                $cObj = new $controller(self::$route); //передает информацию в контроллер 
                 $action = self::lowerCamelCase(self::$route['action']) . 'Action'; //Action для запрета доступа
                 if (method_exists($cObj, $action)) {
                     $cObj->$action(); // не забыть ()
@@ -84,6 +91,19 @@ class Router
     protected static function lowerCamelCase($name)
     {
         return lcfirst(self::upperCamelCase($name));
+    }
+    // обрезать url параметры 
+    protected static function removeQueryString($url)
+    {
+        if ($url) {
+            $params = explode('&', $url, 2); // 2 элемента 
+            if (false === strpos($params[0], '=')) // strpos — Находит позицию первого вхождения подстроки в строку
+            {
+                return rtrim($params[0], '/'); // rtrim — Удаляет пробелы (или другие символы) из конца строки
+            } else {
+                return '';
+            }
+        }
     }
 
 
