@@ -57,7 +57,7 @@ class Router
         $url = self::removeQueryString($url);
         if (self::matchRoute($url)) {
             // 'app\controllers\\'- нужно для пространства имен, добавили после добавления nemespace
-            $controller = 'app\controllers\\' . self::$route['controller'];
+            $controller = 'app\controllers\\' . self::$route['controller'] . 'Controller'; // добавили Controller для нахождение classContoller
             // Проверяет, был ли определен класс
             if (class_exists($controller)) {
                 // проверка на существоание action 

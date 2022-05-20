@@ -7,7 +7,7 @@ abstract class Controller
     public $route = []; // получаем controller, action, param
     public $view;
     public $layout;
-    public $vars; // массив пользовательские даннные
+    public $vars = []; // массив пользовательские даннные
 
     public function __construct($route)
     {
@@ -19,14 +19,15 @@ abstract class Controller
     }
 
     // создает обьект вида
-    public function getView(){
+    public function getView()
+    {
         $vObj = new View($this->route, $this->layout, $this->view);
         $vObj->render($this->vars);
-
     }
 
     // будет заполнять свойства, принимает параметры 
-    public function set($vars){
+    public function set($vars)
+    {
         $this->vars = $vars;
     }
 

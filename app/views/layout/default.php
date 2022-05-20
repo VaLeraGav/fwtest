@@ -20,6 +20,9 @@
     <h1>page Default</h1>
     <!-- заметить что не <php а = -->
     <?= $content; ?>
+    <?php debug(vendor\core\Db::$countSql)?>
+    <?php debug(vendor\core\Db::$queries)?>
+
     <!-- на jQuery (необходим для Bootstrap - х JavaScript плагины) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Включают все скомпилированные плагины (ниже), или включать отдельные файлы по мере необходимости -->

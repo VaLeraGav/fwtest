@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-class Posts extends App{
+class PostsController extends AppController{
 
     // перенесли в Controllers.php
     // public $route= []; // получаем controllers, action

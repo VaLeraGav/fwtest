@@ -26,7 +26,7 @@ class View
     public function render($vars)
     {
         // extract - извлекает эл массива и создает одноименные переменные  
-        extract($vars);
+        if(is_array($vars)) extract($vars);
         $file_view =  APP . "/views/{$this->route['controller']}/{$this->view}.php"; // путь к нашему виду 
         // ob_start — Включение буферизации вывода
         // Если буферизация вывода активна, никакой вывод скрипта не отправляется (кроме заголовков), а сохраняется во внутреннем буфере.
