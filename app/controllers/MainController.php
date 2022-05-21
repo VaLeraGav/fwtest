@@ -22,13 +22,15 @@ class MainController extends AppController
         // $this->set(['name'=>$name, 'color'=>"red"]);
         $model = new Main;
 
-        // $res = $model->query("CREATE TABLE posts2 SELECT * FROM yii2.posts"); // создаем копию таблицы posts
-        // var_dump($res);
-
         $posts = $model->findAll(); // записываеться  данные с БД в массив posts и передает в Main/index.php
+        // $res = $model->query("CREATE TABLE posts2 SELECT * FROM yii2.posts"); // создаем копию таблицы posts
+        // $post = $model->findOne(2);
+        // $date = $model->findBySql("SELECT * FROM {$model->table} ORDER BY id DESC LIMIT 1");
+        // $date = $model->findLike('Тест', 'title');
+
         $title = 'PAGE TITLE';
 
         // compact — Создаёт массив, содержащий названия переменных и их значения
-        $this->set(compact('title', 'posts')); 
+        $this->set(compact('title', 'posts'));
     }
 }

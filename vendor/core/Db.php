@@ -38,22 +38,23 @@ class Db
     }
 
     // true or false выполянеять для тех случаях когда нужно чтобы выполнися sql запрос данные не нужны
-    public function execute($sql)
+    public function execute($sql, $params = [])
     {
         self::$countSql++;
-        self::$queries[]= $sql; // без скобок [] будет записан только 1 запрос 
+        self::$queries[] = $sql; // без скобок [] будет записан только 1 запрос 
         // подготовка 
         $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute();
+        return $stmt->execute($params);
     }
 
+
     // готвоить и исполнять, но еще возвращать данные, SELECT 
-    public function query($sql)
+    public function query($sql, $params = [])
     {
         self::$countSql++;
-        self::$queries[]= $sql;
+        self::$queries[] = $sql;
         $stmt = $this->pdo->prepare($sql);
-        $res = $stmt->execute();
+        $res = $stmt->execute($params);
         if ($res !== false) {
             // etchAll — Извлекает оставшиеся строки из результирующего набора
             return $stmt->fetchAll();
