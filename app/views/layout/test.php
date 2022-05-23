@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Default | <?php $meta['title'] ?> </title>
-    <meta name="discription" content="<?= $meta['desk'] ?>">
-    <meta name="keywords" content="<?= $meta['keywords'] ?>">
+    <title>Test | </title>
 
+    </title>
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
@@ -23,17 +22,8 @@
 <body>
 
     <div class="container">
-        <h1>page Default</h1>
-        <?php //debug($meta) ?> 
-        <?php if (!empty($menu)) : // чтобы не выводил ошибки в отсутствии menu в main 
-        ?>
-            <ul class="nav nav-pills">
-                <li><a href="page/about">About</a></li>
-                <?php foreach ($menu as $item) : ?>
-                    <li><a href="category/<?= $item['id'] ?>"><?= $item['title'] ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
+        <h1>page Test</h1>
+        <h3>На этой странице нет меню</h3>
         <?= $content; ?>
         <!--  заметить что не <php а, убрали так как добавили RedBeans -->
         <?php // debug(vendor\core\Db::$countSql)

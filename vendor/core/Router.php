@@ -37,7 +37,7 @@ class Router
                     }
                 }
                 if (!isset($route['action'])) {
-                    $route['action'] = 'action';
+                    $route['action'] = 'index'; // если захотим поменять /main/... по умолчанию
                 }
                 $route['controller'] = self::upperCamelCase($route['controller']); // с заглавное буквы 
                 // debug($route);

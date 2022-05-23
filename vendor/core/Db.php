@@ -15,7 +15,8 @@ class Db
         // $db - предствляет себя как массив из конфигурации базданных
         $db = require ROOT . '/config/config_db.php';
 
-        // показ ошибок 
+        /*
+        //показ ошибок, убрали в 8 уроке
         $options = [
             // ошибки, произошла ошибка к подключению в БД
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, //  Выбрасывает PDOException.
@@ -26,6 +27,11 @@ class Db
         // class PDO - Представляет соединение между PHP и сервером базы данных
         // PDO и mysqli. PDO является универсальным DBAL, позволяющим работать с любой поддерживаемой базой.
         $this->pdo = new \PDO($db['dsn'], $db['user'], $db['pass'], $options);
+        */
+        require LIBS . '/rb.php';
+        \R::setup($db['dsn'], $db['user'], $db['pass']); // убрали $options
+        \R::freeze(TRUE);
+        // \R::fancyDebug(TRUE);
     }
 
     // проверяет если в обекте ничего нет то будет создан обект  
@@ -37,6 +43,7 @@ class Db
         return self::$intance;
     }
 
+    /*
     // true or false выполянеять для тех случаях когда нужно чтобы выполнися sql запрос данные не нужны
     public function execute($sql, $params = [])
     {
@@ -61,4 +68,5 @@ class Db
         }
         return [];
     }
+    */
 }
