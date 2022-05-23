@@ -23,10 +23,10 @@ class AppController extends Controller
         $this->menu = \R::FindAll('category');
     }
 
-    protected function setMeta($title = 'default', $desc = '', $keywords = '')
+    protected function setMeta($title = '', $desc = '', $keywords = '')
     {
         $this->meta['title']=$title;
-        $this->meta['desk']=$desc;
+        $this->meta['desc']=$desc;
         $this->meta['keywords']=$keywords;
     }
 }

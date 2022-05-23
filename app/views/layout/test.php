@@ -23,7 +23,7 @@
 
     <div class="container">
         <h1>page Test</h1>
-        <h3>На этой странице нет меню</h3>
+        <h3>На этой странице нет меню</h3> 
         <?= $content; ?>
         <!--  заметить что не <php а, убрали так как добавили RedBeans -->
         <?php // debug(vendor\core\Db::$countSql)

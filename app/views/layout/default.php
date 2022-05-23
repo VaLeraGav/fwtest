@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Default | <?php $meta['title'] ?> </title>
-    <meta name="discription" content="<?= $meta['desk'] ?>">
+    <title>Default | <?= $meta['title'] ?> </title>
+    <meta name="discription" content="<?= $meta['desc'] ?>">
     <meta name="keywords" content="<?= $meta['keywords'] ?>">
 
 
@@ -24,7 +24,7 @@
 
     <div class="container">
         <h1>page Default</h1>
-        <?php //debug($meta) ?> 
+        <?php debug($meta) ?> 
         <?php if (!empty($menu)) : // чтобы не выводил ошибки в отсутствии menu в main 
         ?>
             <ul class="nav nav-pills">

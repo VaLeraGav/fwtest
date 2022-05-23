@@ -16,11 +16,9 @@ class PageController extends AppController{
         $posts = \R::findAll('posts');
         // $menu=$this->menu; 
         // $this->set(compact('title', 'menu'));
-
         $menu=$this->menu; 
-        $this->setMeta('Страница', 'Описание страницы', 'Ключевые слова');
-
-        $this->set(compact('title', 'menu'));
+        
+        $this->set(compact('title', 'menu','meta'));
     }
 
 }
