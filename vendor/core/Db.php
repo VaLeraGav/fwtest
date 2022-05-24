@@ -5,7 +5,7 @@ namespace vendor\core;
 class Db
 {
     protected $pdo;
-    protected static $intance;
+    protected static $instance;
     public static $countSql = 0; // количество выполненных запрсов к Бд
     public static $queries = []; // массив в котором будем записывать все наши запросы 
 
@@ -37,10 +37,10 @@ class Db
     // проверяет если в обекте ничего нет то будет создан обект  
     public static function instance()
     {
-        if (self::$intance === null) {
-            self::$intance = new self; // записываем обект
+        if (self::$instance === null) {
+            self::$instance = new self; // записываем обект
         }
-        return self::$intance;
+        return self::$instance;
     }
 
     /*
