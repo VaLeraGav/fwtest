@@ -24,7 +24,7 @@
 
     <div class="container">
         <h1>page Default</h1>
-        <?php debug($meta) ?> 
+        <?php // debug($meta) ?> 
         <?php if (!empty($menu)) : // чтобы не выводил ошибки в отсутствии menu в main 
         ?>
             <ul class="nav nav-pills">
