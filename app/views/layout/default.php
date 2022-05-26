@@ -10,7 +10,6 @@
     <meta name="discription" content="<?= $meta['desc'] ?>">
     <meta name="keywords" content="<?= $meta['keywords'] ?>">
 
-
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
 
@@ -24,7 +23,8 @@
 
     <div class="container">
         <h1>page Default</h1>
-        <?php // debug($meta) ?> 
+        <?php // debug($meta) 
+        ?>
         <?php if (!empty($menu)) : // чтобы не выводил ошибки в отсутствии menu в main 
         ?>
             <ul class="nav nav-pills">
@@ -41,10 +41,38 @@
         <?php // debug(vendor\core\Db::$queries)
         ?>
     </div>
+
     <!-- на jQuery (необходим для Bootstrap - х JavaScript плагины) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Включают все скомпилированные плагины (ниже), или включать отдельные файлы по мере необходимости -->
     <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- //AJAX запросов  -->
+    <!-- <script>
+        // 1 вариант : ( а скопировали в Main/index.php)
+        $('#send').click(function() {
+            $.ajax({
+                url: '/main/test', // куда будет илти ajax запрос 
+                type: 'post',
+                data: {
+                    'id': 2
+                }, // данные которые хотим получить, пост с id=2 
+                success: function(res) // при получении ответа 
+                {
+                    console.log(res)
+                },
+                error: function() {
+                    alert('Error');
+                }
+            });
+        });
+    </script> -->
+    <?php
+    foreach ($scripts as $script) {
+        echo $script;
+    }
+    ?>
+
 </body>
 
 </html>
