@@ -10,11 +10,10 @@
     <!-- выводит ошибки из мета для других методов -->
     <!-- <title>Default |  <?= $meta['title'] ?> </title>
     <meta name="discription" content="<?= $meta['desc'] ?>">
-<<<<<<< HEAD
     <meta name="keywords" content="<?= $meta['keywords'] ?>"> -->
-=======
-    <meta name="keywords" content="<?= $meta['keywords'] ?>">
->>>>>>> 88b81e29b0db01e85dbf19980c6917d3c0025cfe
+
+    
+
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
