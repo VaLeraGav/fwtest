@@ -1,10 +1,13 @@
 <?php 
+// не используем 
 
-require 'rb.php';
-$db= require '../config/config_db.php';
-R::setup($db['dsn'], $db['user'], $db['pass'], $options);
-R::fancyDebug(TRUE);
-// var_dump(R::testConnection()); для проверки подключения
+// тестовый файл для rb
+// require 'rb.php';
+// $db= require '../config/config_db.php';
+// R::setup($db['dsn'], $db['user'], $db['pass'], $options);
+// R::freeze(TRUE);
+// R::fancyDebug(TRUE);
+// var_dump(R::testConnection()); // для проверки подключения
 
 
 // beans - обект, чтобы дальше работать его надо создать 

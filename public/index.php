@@ -12,6 +12,8 @@ define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__)); //выходит из папки public
 define('APP', dirname(__DIR__) . '/app');
 define('LAYOUT', 'default');
+define('LIBS', dirname(__DIR__) . '/vendor/libs');
+define('CACHE', dirname(__DIR__) . '/tmp/cache');
 
 
 require '../vendor/libs/function.php';
@@ -29,8 +31,11 @@ spl_autoload_register(function ($class) {
     }
 });
 
+new \vendor\core\App;
+
 Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']); // пробелы влияют на поиск 
 Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']); // twtest.local/page/view/kfk Одно и тоже twtest.local/page/kfk
+
 
 //? defauts routes
 // пустая строка

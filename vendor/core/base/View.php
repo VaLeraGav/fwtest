@@ -8,6 +8,7 @@ class View
     public $route = []; //текущий маршруты  
     public $view; // текущий вид
     public $layout; // текущий шаблон
+    public $scripts = []; // будет хранится script
 
     // создание view
     public function __construct($route, $layout = '', $view = '')
@@ -26,7 +27,7 @@ class View
     public function render($vars)
     {
         // extract - извлекает эл массива и создает одноименные переменные  
-        if(is_array($vars)) extract($vars);
+        if (is_array($vars)) extract($vars);
         $file_view =  APP . "/views/{$this->route['controller']}/{$this->view}.php"; // путь к нашему виду 
         // ob_start — Включение буферизации вывода
         // Если буферизация вывода активна, никакой вывод скрипта не отправляется (кроме заголовков), а сохраняется во внутреннем буфере.
@@ -40,10 +41,23 @@ class View
         if (false !== $this->layout) {
             $file_layout = APP . "/views/layout/{$this->layout}.php";
             if (is_file($file_layout)) {
+                $content = $this->getScript($content);
                 require $file_layout;
             } else {
                 echo "<p>не найден шаблон <b>$file_layout</b></p>";
             }
         }
     }
+    // $content - все содержимое нашего view
+    // вырезает наши скрипты так как ошибка : $ is not defined
+    // script должен находиться снизу 
+    protected function getScript($content){
+        $pattern = "#<script.*?>.*?</script>#si";
+        preg_match_all($pattern, $content, $this->scripts);
+        if(!empty($this->scripts)){
+            $content = preg_replace($pattern, '', $content);
+        }
+        return $content;
+    }
+
 }
