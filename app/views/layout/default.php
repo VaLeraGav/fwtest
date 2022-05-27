@@ -10,7 +10,11 @@
     <!-- выводит ошибки из мета для других методов -->
     <!-- <title>Default |  <?= $meta['title'] ?> </title>
     <meta name="discription" content="<?= $meta['desc'] ?>">
+<<<<<<< HEAD
     <meta name="keywords" content="<?= $meta['keywords'] ?>"> -->
+=======
+    <meta name="keywords" content="<?= $meta['keywords'] ?>">
+>>>>>>> 88b81e29b0db01e85dbf19980c6917d3c0025cfe
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
@@ -43,11 +47,11 @@
         <?php // debug(vendor\core\Db::$queries)
         ?>
     </div>
+
     <!-- на jQuery (необходим для Bootstrap - х JavaScript плагины) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Включают все скомпилированные плагины (ниже), или включать отдельные файлы по мере необходимости -->
     <script src="/bootstrap/js/bootstrap.min.js"></script>
-
 
     <!-- // AJAX -->
     <script>
@@ -69,6 +73,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>

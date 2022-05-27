@@ -31,6 +31,7 @@ class MainController extends AppController
 
         // кэширование
         // $posts =  App::$app->cache->get('posts');     
+
         // if(!$posts) // идет запись если нет cache
         // {
         //     $posts = \R::findAll('posts');
@@ -61,6 +62,7 @@ class MainController extends AppController
         // compact — Создаёт массив, содержащий названия переменных и их значения
         $this->set(compact('title', 'posts', 'menu', 'meta'));
     }
+
 
 
     // есть скрипт, нужен для конкретной страницы
