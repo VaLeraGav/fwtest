@@ -15,9 +15,9 @@ class AppController extends Controller
     {
         parent::__construct($route);
         // нет меню maine/test
-        if ($this->route['action'] === 'test') {
-            echo "только для тех страниц где есть action : {$route['action']}"; 
-        }
+        // if ($this->route['action'] === 'test') {
+        //     echo "только для тех страниц где есть action : {$route['action']}"; 
+        // }
         
         new \app\models\Main; // для инициализации(соеднинени с БД)
         $this->menu = \R::FindAll('category');

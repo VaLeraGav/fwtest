@@ -43,7 +43,7 @@ class Db
         return self::$instance;
     }
 
-    /*
+    /* подключени Rb
     // true or false выполянеять для тех случаях когда нужно чтобы выполнися sql запрос данные не нужны
     public function execute($sql, $params = [])
     {

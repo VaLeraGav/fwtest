@@ -3,11 +3,11 @@
 namespace app\controllers;
 
 use app\models\Main;
-use \vendor\core\App;
+use vendor\core\App;
 
 class MainController extends AppController
 {
-    public $layout = "default"; // для всего класс
+    // public $layout = "default"; // для всего класс
     public function indexAction()  // если поменять на action то будет искаться /main
     {
         // App::$app->getlist();
@@ -24,14 +24,18 @@ class MainController extends AppController
         // $name = "Angry";
         // $this->set(['name'=>$name, 'color'=>"red"]);
         $model = new Main;
-        \R::fancyDebug(true); // проерка запросов 
+        // \R::fancyDebug(true); // проерка запросов 
         // cache дольжен находиться как можно выше
-        $posts =  App::$app->cache->get('posts');     
-        if(!$posts) // идет запись если нет cache
-        {
-            $posts = \R::findAll('posts');
-            App::$app->cache->set('posts', $posts, 3600 * 24);
-        }
+
+        $posts = \R::findAll('posts');
+
+        // кэширование
+        // $posts =  App::$app->cache->get('posts');     
+        // if(!$posts) // идет запись если нет cache
+        // {
+        //     $posts = \R::findAll('posts');
+        //     App::$app->cache->set('posts', $posts, 3600 * 24);
+        // }
 
         // $posts = $model->findAll(); // записываеться  данные с БД в массив posts и передает в Main/index.php
         // $res = $model->query("CREATE TABLE posts2 SELECT * FROM yii2.posts"); // создаем копию таблицы posts
@@ -58,8 +62,25 @@ class MainController extends AppController
         $this->set(compact('title', 'posts', 'menu', 'meta'));
     }
 
+
+    // есть скрипт, нужен для конкретной страницы
+    // 1 подход :
+    // мы подключаем нужный скрипт в контроллере
+    // в action отвечающий за данную страницу 
+    // будет подключать для страницы нужные скрипты
+    // поместить весь JS в один файл
+    // 2 подход :
+    // подключение скриптов непосредственно в нужном виде 
+    // часто используется в фреймворках(мы будем использовать именно его)
+
+    // core\base\Controller дополнительный метод который определяет пришел ли ajax запрос 
     public function testAction()
     {
-        $this->layout = 'test';
+        if ($this->isAjax()) {
+            echo 111;   // асинхронный запрос, при нажатии кнопки 
+            die;    // завершение скрипта 
+        }
+        echo 222;   // при стандартном обращении через url
+        // $this->layout = false;
     }
 }

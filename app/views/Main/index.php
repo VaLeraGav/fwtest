@@ -1,8 +1,5 @@
-<code><?= __FILE__ ?></code>
-
 <div class="container">
-
-
+    <button class="btn btn-default" id="send">Кнопка</button>
     <?php if (!empty($posts)) :
         foreach ($posts as $post) : ?>
             <div class='panel panel-default'>

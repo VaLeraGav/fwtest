@@ -12,14 +12,14 @@ class Cache
     // set -  положить данные в папку cache
     // $key - название данных которые кладем в cache
     // $date - данные 
-    // $second =  время 
+    // $second -  время 
     public function set($key, $date, $second = 3600)
     {
         // конечную данные
         $content['date'] = $date;
         $content['end_time'] = time() + $second; // на 1 час
         // md5
-        // serialize
+        // serialize - Генерирует пригодное для хранения представление переменной, Это полезно для хранения или передачи значений PHP между скриптами без потери их типа и структуры.
         if (file_put_contents(CACHE . '/' . md5($key) . 'txt', serialize($content))) {
             return true;
         }
@@ -30,7 +30,7 @@ class Cache
         $file = CACHE . '/' . md5($key) . 'txt';
 
         if (file_exists($file)) {
-            // unserialize - создает значение PHP из сохраненного представления
+            // unserialize - создает значение PHP из сохраненного представления, Для превращения сериализованной строки обратно в PHP-значение, 
             $content = unserialize(file_get_contents($file));
             if (time() <= $content['end_time']) // временная метка еще действительна
             {
