@@ -12,9 +12,6 @@
     <meta name="discription" content="<?= $meta['desc'] ?>">
     <meta name="keywords" content="<?= $meta['keywords'] ?>"> -->
 
-    
-
-
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
 
@@ -53,7 +50,7 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- // AJAX -->
-    <script>
+    <!-- <script>
         $(function() {
             $('#send').click(function() {
                 $.ajax({
@@ -71,8 +68,13 @@
                 });
             });
         });
-    </script>
-
+    </script> -->
+    <?php
+    foreach ($scripts as $script) // проходит по массиву scripts, там то что сверху, он находиться в view
+    {
+        echo $script;
+    }
+    ?>
 </body>
 
 </html>

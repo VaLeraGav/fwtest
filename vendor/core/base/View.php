@@ -37,11 +37,15 @@ class View
         } else {
             echo "<p>не найден{$file_view}</p>";
         }
-        $content = ob_get_clean(); // все echo и require записалось в эту переменную 
+        $content = ob_get_clean(); // все echo и require записалось в эту переменную, все содержание нашего view
         if (false !== $this->layout) {
             $file_layout = APP . "/views/layout/{$this->layout}.php";
             if (is_file($file_layout)) {
-                $content = $this->getScript($content);
+                $content = $this->getScript($content);  // усли убрать то все скрипты уберуться
+                $scripts = []; //  будет хранится script
+                if (!empty($this->scripts[0])) {
+                    $scripts = $this->scripts[0];
+                }
                 require $file_layout;
             } else {
                 echo "<p>не найден шаблон <b>$file_layout</b></p>";
