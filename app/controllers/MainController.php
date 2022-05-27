@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Main;
 use vendor\core\App;
+use vendor\core\base\View;
 
 class MainController extends AppController
 {
@@ -55,9 +56,13 @@ class MainController extends AppController
 
         // $menu = \R::FindAll('category');
         $menu = $this->menu;
+        
+        // убралив 13 уроке
+        // $this->setMeta('Главная страница', 'Описание страницы', 'Ключевые слова');
+        // $meta = $this->meta;
+        View::setMeta('Главная страница', 'Описание страницы', 'Ключевые слова');
 
-        $this->setMeta('Главная страница', 'Описание страницы', 'Ключевые слова');
-        $meta = $this->meta;
+
 
         // compact — Создаёт массив, содержащий названия переменных и их значения
         $this->set(compact('title', 'posts', 'menu', 'meta'));
@@ -79,6 +84,11 @@ class MainController extends AppController
     public function testAction()
     {
         if ($this->isAjax()) {
+            // выводит в консоль при нажатии, информацию по 2 посту а именно какие смотреть в /Main/test.php
+            // 2 потому что Ajax id = 2
+            $model = new Main();
+            $post = \R::findOne('posts', "id = {$_POST['id']}"); // получить 1 запись 
+            $this->loadView('_test',compact('post'));
             echo 111;   // асинхронный запрос, при нажатии кнопки 
             die;    // завершение скрипта 
         }

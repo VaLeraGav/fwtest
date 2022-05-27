@@ -5,7 +5,8 @@ namespace vendor\core;
 class Db
 {
     protected $pdo;
-    protected static $instance;
+    use TSingletone;
+    // protected static $instance; в TSing
     public static $countSql = 0; // количество выполненных запрсов к Бд
     public static $queries = []; // массив в котором будем записывать все наши запросы 
 
@@ -33,17 +34,17 @@ class Db
         \R::freeze(TRUE);
         // \R::fancyDebug(TRUE);
     }
-
+    // В TSing
     // проверяет если в обекте ничего нет то будет создан обект  
-    public static function instance()
-    {
-        if (self::$instance === null) {
-            self::$instance = new self; // записываем обект
-        }
-        return self::$instance;
-    }
+    // public static function instance()
+    // {
+    //     if (self::$instance === null) {
+    //         self::$instance = new self; // записываем обект
+    //     }
+    //     return self::$instance;
+    // }
 
-    /* подключени Rb
+    /* был подключен Rb
     // true or false выполянеять для тех случаях когда нужно чтобы выполнися sql запрос данные не нужны
     public function execute($sql, $params = [])
     {

@@ -5,8 +5,10 @@ namespace vendor\core;
 
 class Registry
 {
+    use TSingletone;
     public static $objects = []; // массив с обектами
-    protected static $instance;
+    // protected static $instance;
+
 
     // в контейнере $object будет находиться обектс именем cache and test
     protected function __construct()
@@ -16,14 +18,14 @@ class Registry
             self::$objects[$name] = new $component;
         }
     }
-
-    public static function instance()
-    {
-        if (self::$instance === null) {
-            self::$instance = new self; // записываем обект
-        }
-        return self::$instance;
-    }
+    // в TSing
+    // public static function instance()
+    // {
+    //     if (self::$instance === null) {
+    //         self::$instance = new self; // записываем обект
+    //     }
+    //     return self::$instance;
+    // }
 
     // обращение к неизвестному свойству которого нет 
     public function __get($name)

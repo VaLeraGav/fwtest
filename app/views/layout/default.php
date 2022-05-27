@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Default | </title>
+    <?php \vendor\core\base\View::getMeta()?>
+
     <!-- выводит ошибки из мета для других методов -->
-    <!-- <title>Default |  <?= $meta['title'] ?> </title>
-    <meta name="discription" content="<?= $meta['desc'] ?>">
-    <meta name="keywords" content="<?= $meta['keywords'] ?>"> -->
+    <!-- <title>Default |  <?php //$meta['title'] ?> </title>
+    <meta name="discription" content="<?php //$meta['desc'] ?>">
+    <meta name="keywords" content="<?php //$meta['keywords'] ?>"> -->
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">

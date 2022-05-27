@@ -9,6 +9,7 @@ class View
     public $view; // текущий вид
     public $layout; // текущий шаблон
     public $scripts = []; // будет хранится script
+    public static $meta = ['title' => '', 'desc' => '', 'keywords' => ''];
 
     // создание view
     public function __construct($route, $layout = '', $view = '')
@@ -58,10 +59,26 @@ class View
     protected function getScript($content){
         $pattern = "#<script.*?>.*?</script>#si";
         preg_match_all($pattern, $content, $this->scripts);
-        if(!empty($this->scripts)){
+        if (!empty($this->scripts)){
             $content = preg_replace($pattern, '', $content);
         }
         return $content;
     }
 
+
+    // возвращает в html 
+    public static function getMeta()
+    {
+        echo '<title>'. self::$meta['title'] .'</title> 
+        <meta name="description" contant="'.self::$meta['desc'].'">
+        <meta name="keywords" contant="'.self::$meta['keywords'].'"';
+    }
+
+    // устанавливает 
+    public static function setMeta($title = '', $desc = '', $keywords = '')
+    {
+        self::$meta['title'] = $title;
+        self::$meta['desc'] = $desc;
+        self::$meta['keywords'] = $keywords;
+    }
 }
