@@ -25,6 +25,7 @@ class MainController extends AppController
         // $name = "Angry";
         // $this->set(['name'=>$name, 'color'=>"red"]);
         $model = new Main;
+
         // \R::fancyDebug(true); // проерка запросов 
         // cache дольжен находиться как можно выше
 
@@ -87,9 +88,14 @@ class MainController extends AppController
             // выводит в консоль при нажатии, информацию по 2 посту а именно какие смотреть в /Main/test.php
             // 2 потому что Ajax id = 2
             $model = new Main();
+            //  в 16 уроке отключили 
             $post = \R::findOne('posts', "id = {$_POST['id']}"); // получить 1 запись 
             $this->loadView('_test',compact('post'));
-            echo 111;   // асинхронный запрос, при нажатии кнопки 
+            // echo 111;   // асинхронный запрос, при нажатии кнопки 
+            
+            // выведет в консоли текст массива 
+            // $data = ['answer'=>'Ответ с сервера','code'=> 200]; // в качестве ответа для ajax
+            // echo json_encode($data);
             die;    // завершение скрипта 
         }
         echo 222;   // при стандартном обращении через url

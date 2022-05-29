@@ -29,25 +29,28 @@ class ErrorHandler
     public function errorHeandler($errno, $errstr, $errfile, $errline)
     {
         $this->logErrors($errstr, $errfile, $errline);
+        if(DEBUG || in_array($errno, [E_USER_ERROR, E_RECOVERABLE_ERROR])){ // для фатальных и смешеных 
         $this->displayError($errno, $errstr, $errfile, $errline);
+        }
         // var_dump($errno, $errstr, $errfile, $errline);
         return true; // false - нельзя, так как оброботка ошибок от PHP 
     }
 
     // $response - код ответа 
     // 500, ошибка сервера, если произойдет ошибка, то поисковик  считает что это внутренняя ошибка и не индексирует эту страницу 
+    // именно он останавливает 
     protected function displayError($errno, $errstr, $errfile, $errline, $response = 500)
     {
         http_response_code($response); // http_response_code — Получает или устанавливает код ответа HTTP
-        if ($response == 404){
+        if ($response == 404) {
             require WWW . '/errors/404.html';
             die;
         }
-            if (DEBUG) {
-                require WWW . '/errors/dev.php';
-            } else {
-                require WWW . '/errors/prod.php';
-            }
+        if (DEBUG) {
+            require WWW . '/errors/dev.php';
+        } else {
+            require WWW . '/errors/prod.php';
+        }
         die;
     }
 
@@ -71,6 +74,7 @@ class ErrorHandler
         // сохраняет ошибки, логирует их, так же можно отправлять на email
         // error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$e->getMessage()} | Файл: {$e->getFile()}, | Строка: {$e->getLine()}\n==========================\n", 3, __DIR__ . '/errors.log');
         $this->displayError('Исключение', $e->getMessage(), $e->getFile(), $e->getLine(), $e->getCode()); // getCode -  в консоле 
+        return true;
     }
 
     // логирование 

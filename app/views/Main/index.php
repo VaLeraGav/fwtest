@@ -1,5 +1,8 @@
 <div class="container">
+    <div id="answer"></div>
     <button class="btn btn-default" id="send">Кнопка</button>
+    <br>
+    <?php new \vendor\widgets\menu\Menu;  ?>
     <?php if (!empty($posts)) :
         foreach ($posts as $post) : ?>
             <div class='panel panel-default'>
@@ -22,6 +25,11 @@
                 }, // данные которые хотим получить, пост с id=2 
                 success: function(res) // при получении ответа 
                 {
+                    // вывод на экран массив
+                    // var data = JSON.parse(res); // получение json обекта
+                    // $('#answer').html('<p>ответ: '+ data.answer + '| Код: ' + data.code +'</p>');
+                    
+                    // $('#answer').html(res)
                     console.log(res)
                 },
                 error: function() {
