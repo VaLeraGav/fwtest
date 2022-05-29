@@ -67,14 +67,18 @@ class Router
                     $cObj->$action(); // не забыть ()
                     $cObj->getView();
                 } else {
-                    echo "<br>метод <b>$controller::$action</b> не найден";
+                    // echo "<br>метод <b>$controller::$action</b> не найден";
+                    throw new \Exception("<br>метод $controller::$action не найден", 404);
                 }
             } else {
-                echo "<br>контроллер <b>$controller</b> не найден";
+                // echo "<br>контроллер <b>$controller</b> не найден";
+                throw new \Exception("контроллер $controller не найден", 404);
+
             }
         } else {
-            http_response_code(404);
-            include '404.html';
+            // http_response_code(404);
+            // include '404.html';
+            throw new \Exception("Страница не найдена", 404);
         }
     }
 

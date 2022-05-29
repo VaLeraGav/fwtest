@@ -1,0 +1,16 @@
+[2022-05-29 17:23:33] Текст ошибки: syntax error, unexpected '$posts' (T_VARIABLE) | Файл: C:\OpenServer\domains\fwtest.local\app\controllers\MainController.php, | Строка: 31
+==========================
+[2022-05-29 17:31:20] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 81
+==========================
+[2022-05-29 17:31:20] Текст ошибки: require(C:\OpenServer\domains\fwtest.local\public/errors/404.html): failed to open stream: No such file or directory | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\ErrorHandler.php, | Строка: 43
+==========================
+[2022-05-29 17:31:39] Текст ошибки: <br>контроллер <b>app\controllers\PapfController</b> не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 75
+==========================
+[2022-05-29 17:31:39] Текст ошибки: require(C:\OpenServer\domains\fwtest.local\public/errors/404.html): failed to open stream: No such file or directory | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\ErrorHandler.php, | Строка: 43
+==========================
+[2022-05-29 17:33:16] Текст ошибки: <br>контроллер <b>app\controllers\PapfController</b> не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 75
+==========================
+[2022-05-29 17:37:13] Текст ошибки: контроллер app\controllers\PapfController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 75
+==========================
+[2022-05-29 17:39:26] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\domains\fwtest.local\app\controllers\MainController.php, | Строка: 28
+==========================

@@ -2,7 +2,7 @@
 
 namespace vendor\core;
 use vendor\core\Registry;
-
+use vendor\core\ErrorHandler;
 // создавать обект нашего registry
 
 class App{
@@ -10,6 +10,7 @@ class App{
 
     public function __construct() {
         self::$app= Registry::instance();
+        new ErrorHandler();
     }
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(-1); //для вывода всех ошибок
+// error_reporting(-1); //для вывода всех ошибок
 
 use vendor\core\Router;
 
@@ -14,6 +14,7 @@ define('APP', dirname(__DIR__) . '/app');
 define('LAYOUT', 'default');
 define('LIBS', dirname(__DIR__) . '/vendor/libs');
 define('CACHE', dirname(__DIR__) . '/tmp/cache');
+define("DEBUG", 1); // режим разработки 1-разработки 0-чистовик 
 
 
 require '../vendor/libs/function.php';
