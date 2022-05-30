@@ -2,7 +2,27 @@
     <div id="answer"></div>
     <button class="btn btn-default" id="send">Кнопка</button>
     <br>
-    <?php new \vendor\widgets\menu\Menu;  ?>
+    <!-- настройка menu, переопределение -->
+    <!-- <?php new \vendor\widgets\menu\Menu([
+        'tpl' => WWW . '/menu/my_menu.php',
+        'container' => 'ul',
+        'table' => 'categories',
+        'cache' => 60,
+        'class' => 'my-menu',
+        'cacheKey' => 'menu_ul', 
+        
+    ]); ?> -->
+
+    <!-- <?php /*new \vendor\widgets\menu\Menu([
+        'tpl' => WWW . '/menu/select.php',
+        'container' => 'select',
+        'table' => 'categories',
+        'cache' => 60,
+        'class' => 'my-select',
+        'cacheKey' => 'menu_select',
+    ]);*/ ?> -->
+
+
     <?php if (!empty($posts)) :
         foreach ($posts as $post) : ?>
             <div class='panel panel-default'>
@@ -28,7 +48,7 @@
                     // вывод на экран массив
                     // var data = JSON.parse(res); // получение json обекта
                     // $('#answer').html('<p>ответ: '+ data.answer + '| Код: ' + data.code +'</p>');
-                    
+
                     // $('#answer').html(res)
                     console.log(res)
                 },
