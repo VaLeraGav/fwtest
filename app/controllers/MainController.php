@@ -63,8 +63,6 @@ class MainController extends AppController
         // $meta = $this->meta;
         View::setMeta('Главная страница', 'Описание страницы', 'Ключевые слова');
 
-
-
         // compact — Создаёт массив, содержащий названия переменных и их значения
         $this->set(compact('title', 'posts', 'menu', 'meta'));
     }

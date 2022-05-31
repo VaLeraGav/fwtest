@@ -4,3 +4,33 @@
 ==========================
 [2022-05-29 17:31:20] Текст ошибки: require(C:\OpenServer\domains\fwtest.local\public/errors/404.html): failed to open stream: No such file or directory | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\ErrorHandler.php, | Строка: 43
 ==========================
+[2022-05-31 10:11:29] Текст ошибки: контроллер app\controllers\AdminController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 75
+==========================
+[2022-05-31 10:11:51] Текст ошибки: контроллер app\controllers\UserController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 75
+==========================
+[2022-05-31 10:12:01] Текст ошибки: контроллер app\controllers\AdminController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 75
+==========================
+[2022-05-31 10:12:36] Текст ошибки: контроллер app\controllers\TestController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 75
+==========================
+[2022-05-31 10:14:42] Текст ошибки: контроллер app\controllers\TestController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 75
+==========================
+[2022-05-31 10:14:59] Текст ошибки: контроллер app\controllers\TestController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 75
+==========================
+[2022-05-31 10:17:19] Текст ошибки: контроллер app\controllers\TestController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 77
+==========================
+[2022-05-31 10:17:35] Текст ошибки: контроллер app\controllers\TestController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 77
+==========================
+[2022-05-31 10:22:03] Текст ошибки: Cannot use isset() on the result of an expression (you can use "null !== expression" instead) | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 43
+==========================
+[2022-05-31 10:22:30] Текст ошибки: Cannot use isset() on the result of an expression (you can use "null !== expression" instead) | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 43
+==========================
+[2022-05-31 10:25:32] Текст ошибки: контроллер app\controllers\TestController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 83
+==========================
+[2022-05-31 10:28:04] Текст ошибки: контроллер app\controllers\admin\TestController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 81
+==========================
+[2022-05-31 10:53:52] Текст ошибки: не найденC:\OpenServer\domains\fwtest.local/app/views/admin\User/index.php | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\base\View.php, | Строка: 40
+==========================
+[2022-05-31 10:55:54] Текст ошибки: не найденC:\OpenServer\domains\fwtest.local/app/views/admin\User/index.php | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\base\View.php, | Строка: 40
+==========================
+[2022-05-31 11:25:23] Текст ошибки: контроллер app\controllers\UserController не найден | Файл: C:\OpenServer\domains\fwtest.local\vendor\core\Router.php, | Строка: 83
+==========================

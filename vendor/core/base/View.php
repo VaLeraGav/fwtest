@@ -29,14 +29,15 @@ class View
     {
         // extract - извлекает эл массива и создает одноименные переменные  
         if (is_array($vars)) extract($vars);
-        $file_view =  APP . "/views/{$this->route['controller']}/{$this->view}.php"; // путь к нашему виду 
+        $file_view =  APP . "/views/{$this->route['prefix']}{$this->route['controller']}/{$this->view}.php"; // путь к нашему виду 
         // ob_start — Включение буферизации вывода
         // Если буферизация вывода активна, никакой вывод скрипта не отправляется (кроме заголовков), а сохраняется во внутреннем буфере.
         ob_start();
         if (is_file($file_view)) {
             require $file_view;
         } else {
-            echo "<p>не найден{$file_view}</p>";
+            // echo "<p>не найден{$file_view}</p>";
+            throw new \Exception("не найден{$file_view}", 404);
         }
         $content = ob_get_clean(); // все echo и require записалось в эту переменную, все содержание нашего view
         if (false !== $this->layout) {
@@ -49,7 +50,9 @@ class View
                 }
                 require $file_layout;
             } else {
-                echo "<p>не найден шаблон <b>$file_layout</b></p>";
+                // echo "<p>не найден шаблон <b>$file_layout</b></p>";
+                throw new \Exception("не найден шаблон $file_layout", 404);
+            
             }
         }
     }

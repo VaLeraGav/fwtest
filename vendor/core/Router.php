@@ -39,6 +39,12 @@ class Router
                 if (!isset($route['action'])) {
                     $route['action'] = 'index'; // если захотим поменять /main/... по умолчанию
                 }
+                // prefix for admin controllers 
+                if (!isset($route['prefix'])) {
+                    $route['prefix'] = '';
+                } else {
+                    $route['prefix'] .= '\\';
+                }
                 $route['controller'] = self::upperCamelCase($route['controller']); // с заглавное буквы 
                 // debug($route);
                 // [comtroller] => post
@@ -57,7 +63,9 @@ class Router
         $url = self::removeQueryString($url);
         if (self::matchRoute($url)) {
             // 'app\controllers\\'- нужно для пространства имен, добавили после добавления nemespace
-            $controller = 'app\controllers\\' . self::$route['controller'] . 'Controller'; // добавили Controller для нахождение classContoller
+            // 'app\controllers\admin\UserController' - в админской части
+            // 'app\controllers\MainController' - для пользовательской части 
+            $controller = 'app\controllers\\' . self::$route['prefix'] .self::$route['controller'] . 'Controller'; // добавили Controller для нахождение classContoller
             // Проверяет, был ли определен класс
             if (class_exists($controller)) {
                 // проверка на существоание action 
@@ -73,7 +81,6 @@ class Router
             } else {
                 // echo "<br>контроллер <b>$controller</b> не найден";
                 throw new \Exception("контроллер $controller не найден", 404);
-
             }
         } else {
             // http_response_code(404);

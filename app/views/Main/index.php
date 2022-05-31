@@ -2,8 +2,9 @@
     <div id="answer"></div>
     <button class="btn btn-default" id="send">Кнопка</button>
     <br>
+    
     <!-- настройка menu, переопределение -->
-    <!-- <?php new \vendor\widgets\menu\Menu([
+    <!-- <?php /*new \vendor\widgets\menu\Menu([
         'tpl' => WWW . '/menu/my_menu.php',
         'container' => 'ul',
         'table' => 'categories',
@@ -11,7 +12,7 @@
         'class' => 'my-menu',
         'cacheKey' => 'menu_ul', 
         
-    ]); ?> -->
+    ]); */?> -->
 
     <!-- <?php /*new \vendor\widgets\menu\Menu([
         'tpl' => WWW . '/menu/select.php',

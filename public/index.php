@@ -39,6 +39,10 @@ Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'v
 
 
 //? defauts routes
+// правило приоритетов 
+Router::add('^admin$', ['controller' => 'User', 'action' => 'index', 'prefix'=>'admin']);
+Router::add('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$',['prefix'=>'admin']);
+
 // пустая строка
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 // первый за контрольер второй за action

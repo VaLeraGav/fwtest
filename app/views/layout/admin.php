@@ -7,11 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <?php \vendor\core\base\View::getMeta()?>
+    <title><?php //$meta['title'] ?> </title>
 
-    <!-- текст -->
-    <!-- <title>Default |  <?php //$meta['title'] ?> </title>
-    <meta name="discription" content="<?php //$meta['desc'] ?>">
-    <meta name="keywords" content="<?php //$meta['keywords'] ?>"> -->
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
@@ -25,7 +22,7 @@
 <body>
 
     <div class="container">
-        <h1>page Default</h1>
+        <h1>Admin</h1>
         <?php // debug($meta) 
         ?>
         <?php if (!empty($menu)) : // чтобы не выводил ошибки в отсутствии menu в main 
@@ -50,26 +47,6 @@
     <!-- Включают все скомпилированные плагины (ниже), или включать отдельные файлы по мере необходимости -->
     <script src="/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- // AJAX -->
-    <!-- <script>
-        $(function() {
-            $('#send').click(function() {
-                $.ajax({
-                    url: '/main/test',
-                    type: 'post',
-                    data: {
-                        'id': 2
-                    },
-                    success: function(res) {
-                        console.log(res)
-                    },
-                    error: function() {
-                        alert('Error!');
-                    }
-                });
-            });
-        });
-    </script> -->
     <?php
     foreach ($scripts as $script) // проходит по массиву scripts, там то что сверху, он находиться в view
     {
