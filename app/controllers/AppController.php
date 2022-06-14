@@ -2,7 +2,7 @@
 // нужен чтобы не лазить в ядро сайта а будем пользоваться на уровне приложения 
 namespace app\controllers;
 
-use vendor\core\base\Controller;
+use fw\core\base\Controller;
 
 class AppController extends Controller
 {

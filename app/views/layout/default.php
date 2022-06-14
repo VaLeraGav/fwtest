@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <?php \vendor\core\base\View::getMeta()?>
+    <?php \fw\core\base\View::getMeta() ?>
 
     <!-- текст -->
-    <!-- <title>Default |  <?php //$meta['title'] ?> </title>
-    <meta name="discription" content="<?php //$meta['desc'] ?>">
-    <meta name="keywords" content="<?php //$meta['keywords'] ?>"> -->
+    <!-- <title>Default |  <?php //$meta['title'] 
+                            ?> </title>
+    <meta name="discription" content="<?php //$meta['desc'] 
+                                        ?>">
+    <meta name="keywords" content="<?php //$meta['keywords'] 
+                                    ?>"> -->
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
@@ -32,9 +35,11 @@
         ?>
             <ul class="nav nav-pills">
                 <li><a href="page/about">About</a></li>
-                <?php foreach ($menu as $item) : ?>
-                    <li><a href="category/<?= $item['id'] ?>"><?= $item['title'] ?></a></li>
-                <?php endforeach; ?>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin">Admin</a></li>
+                <?php /*foreach ($menu as $item) :*/ ?>
+                <li><a href="category/<?php /*$item['id'] */ ?>"><?php /*$item['title']*/ ?></a></li>
+                <?php /* endforeach;*/ ?>
             </ul>
         <?php endif; ?>
         <?= $content; ?>

@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use vendor\core\base\Model;
+use fw\core\base\Model;
 
 class Main extends Model
 {

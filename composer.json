@@ -1,0 +1,12 @@
+{
+    "name": "fw/fw",
+    "require": {
+        "monolog/monolog": "^1.27"
+    },
+    "autoload": {
+        "psr-4": {
+            "fw\\": "vendor/fw",
+            "app\\": "app"
+        }
+    }
+}

@@ -4,7 +4,7 @@ namespace app\controllers;
 
 class PageController extends AppController{
 
-    public $layout = "test"; // для всего класс, для setMeta
+    public $layout = "default"; // для всего класс, для setMeta
     public function indexAction(){
         echo "Posts : index (indexAction) ";
     }

@@ -3,8 +3,13 @@
 namespace app\controllers;
 
 use app\models\Main;
-use vendor\core\App;
-use vendor\core\base\View;
+use fw\core\App;
+use fw\core\base\View;
+
+use Monolog\Level;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Psr\Log\LogLevel;
 
 class MainController extends AppController
 {
@@ -57,7 +62,7 @@ class MainController extends AppController
 
         // $menu = \R::FindAll('category');
         $menu = $this->menu;
-        
+
         // убралив 13 уроке
         // $this->setMeta('Главная страница', 'Описание страницы', 'Ключевые слова');
         // $meta = $this->meta;
@@ -65,6 +70,15 @@ class MainController extends AppController
 
         // compact — Создаёт массив, содержащий названия переменных и их значения
         $this->set(compact('title', 'posts', 'menu', 'meta'));
+
+
+        // create a log channel
+        // $log = new Logger('name');
+        // $log->pushHandler(new StreamHandler(ROOT . 'tmp/your.log'), Level::class);
+
+        // // add records to the log
+        // $log->warning('Foo');
+        // $log->error('Bar');
     }
 
 
@@ -73,7 +87,7 @@ class MainController extends AppController
     // 1 подход :
     // мы подключаем нужный скрипт в контроллере
     // в action отвечающий за данную страницу 
-    // будет подключать для страницы нужные скрипты
+    // будет подключать для страницы нужные скрипыты
     // поместить весь JS в один файл
     // 2 подход :
     // подключение скриптов непосредственно в нужном виде 
@@ -88,9 +102,9 @@ class MainController extends AppController
             $model = new Main();
             //  в 16 уроке отключили 
             $post = \R::findOne('posts', "id = {$_POST['id']}"); // получить 1 запись 
-            $this->loadView('_test',compact('post'));
+            $this->loadView('_test', compact('post'));
             // echo 111;   // асинхронный запрос, при нажатии кнопки 
-            
+
             // выведет в консоли текст массива 
             // $data = ['answer'=>'Ответ с сервера','code'=> 200]; // в качестве ответа для ajax
             // echo json_encode($data);

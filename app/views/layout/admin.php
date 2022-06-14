@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <?php \vendor\core\base\View::getMeta()?>
-    <title><?php //$meta['title'] ?> </title>
+    <?php \fw\core\base\View::getMeta() ?>
+    <title><?php //$meta['title'] 
+            ?> </title>
 
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,15 +26,17 @@
         <h1>Admin</h1>
         <?php // debug($meta) 
         ?>
-        <?php if (!empty($menu)) : // чтобы не выводил ошибки в отсутствии menu в main 
+        <?php /* if (!empty($menu)) : */ // чтобы не выводил ошибки в отсутствии menu в main 
         ?>
-            <ul class="nav nav-pills">
-                <li><a href="page/about">About</a></li>
-                <?php foreach ($menu as $item) : ?>
-                    <li><a href="category/<?= $item['id'] ?>"><?= $item['title'] ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
+        <ul class="nav nav-pills">
+            <li><a href="page/about">About</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/admin">Admin</a></li>
+            <?php /*foreach ($menu as $item) :*/ ?>
+            <li><a href="category/<?php /*$item['id'] */ ?>"><?php /*$item['title']*/ ?></a></li>
+            <?php /* endforeach;*/ ?>
+        </ul>
+        <?php /* endif; */ ?>
         <?= $content; ?>
         <!--  заметить что не <php а, убрали так как добавили RedBeans -->
         <?php // debug(vendor\core\Db::$countSql)

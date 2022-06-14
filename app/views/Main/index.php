@@ -4,7 +4,7 @@
     <br>
     
     <!-- настройка menu, переопределение -->
-    <!-- <?php /*new \vendor\widgets\menu\Menu([
+    <!-- <?php /*new \fw\widgets\menu\Menu([
         'tpl' => WWW . '/menu/my_menu.php',
         'container' => 'ul',
         'table' => 'categories',
@@ -14,7 +14,7 @@
         
     ]); */?> -->
 
-    <!-- <?php /*new \vendor\widgets\menu\Menu([
+    <!-- <?php /*new \fw\widgets\menu\Menu([
         'tpl' => WWW . '/menu/select.php',
         'container' => 'select',
         'table' => 'categories',

@@ -2,11 +2,11 @@
 
 namespace app\controllers\admin;
 
-use vendor\core\base\View;
+use fw\core\base\View;
 
 class UserController extends AppController
 {
-    public $layout = 'default';
+    public $layout = 'admin';
     public function indexAction()
     {
         View::setMeta('Admin::Главная страница', 'описание админки', 'ключи админки');
