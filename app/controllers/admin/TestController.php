@@ -2,10 +2,11 @@
 
 namespace app\controllers\admin;
 
-class TestController extends AppController{
+class TestController extends AppController
+{
     public function indexAction()
     {
-       // echo __METHOD__;
+        echo __METHOD__;
     }
     public function testAction()
     {

@@ -6,7 +6,7 @@ use fw\core\base\View;
 
 class UserController extends AppController
 {
-    public $layout = 'admin';
+    // public $layout = 'admin';
     public function indexAction()
     {
         View::setMeta('Admin::Главная страница', 'описание админки', 'ключи админки');
@@ -24,6 +24,6 @@ class UserController extends AppController
     }
     public function testAction()
     {
-        echo __METHOD__;
+        // echo __METHOD__;
     }
 }

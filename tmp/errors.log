@@ -66,3 +66,119 @@
 ==========================
 [2022-06-14 15:13:37] Текст ошибки: Class 'Monolog\Level' not found | Файл: C:\OpenServer\domains\fwtest.local\app\controllers\MainController.php, | Строка: 75
 ==========================
+[2022-06-15 11:03:59] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 11:04:10] Текст ошибки: не найденC:\OpenServer\domains\fwtest.local/app/views/User/logout.php | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\base\View.php, | Строка: 40
+==========================
+[2022-06-15 11:17:07] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 11:21:19] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 11:28:22] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 11:28:32] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 11:33:11] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:11:49] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:11:49] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:12:12] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:12:52] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:18:36] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:20:00] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:20:13] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:21:55] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:22:03] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:22:56] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:28:18] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:28:26] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:28:49] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:28:55] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:32:57] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:33:55] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:34:00] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:34:44] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:34:52] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:35:00] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:39:11] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:41:30] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:43:54] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:45:24] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:47:06] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:49:22] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:49:40] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:51:29] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:51:35] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:51:45] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:52:22] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:52:35] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:53:44] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:56:37] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:57:50] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:58:40] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:59:11] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 13:59:46] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:00:11] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:00:13] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:02:28] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:02:32] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:02:51] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:03:55] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:09:10] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:09:21] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:09:25] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:10:03] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:10:33] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:12:14] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================
+[2022-06-15 14:12:20] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 88
+==========================

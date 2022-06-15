@@ -3,12 +3,16 @@
 namespace fw\core\base;
 
 use fw\core\Db;
+use Valitron\Validator;
 
 abstract class Model
 {
     protected $pdo;
     protected $table; // имя таблицы 
     protected $pk = 'id'; // первичный ключ 
+    public $attributes = [];
+    public $errors =[]; // ошибки валидации
+    public $rules = []; // правила валидации
 
     public function __construct()
     {
@@ -44,10 +48,32 @@ abstract class Model
     }
 
     // для запросов ввида Like
-    public function findLike($str,$field, $table='')
+    public function findLike($str, $field, $table = '')
     {
         $table = $table ?: $this->table;
         $sql = "SELECT * FROM $table WHERE $field LIKE ?";
-        return $this->pdo->query($sql, ['%'. $str .'%']);
+        return $this->pdo->query($sql, ['%' . $str . '%']);
+    }
+
+    // для автоматической загрузки данных
+    public function load($data)
+    {
+        foreach ($this->attributes as $name => $value) {
+            if (isset($data[$name])) {
+                $this->attributes[$name] = $data[$name];
+            }
+        }
+    }
+    // метод для валидации 
+    public function validate($data)
+    {
+        $v = new Validator($data);
+        $v->rules($this->rules);
+        if ($v->validate()) // если есть ошибки 
+        {
+            return true;
+        }
+        $this->errors = $v->errors(); // запись ошибок 
+        return false;
     }
 }
