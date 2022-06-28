@@ -18,7 +18,7 @@ class PageController extends AppController{
         // $menu=$this->menu; 
         // $this->set(compact('title', 'menu'));
        
-        // $menu=$this->menu; 
+        $menu=$this->menu; 
         // $this->set(compact('title', 'menu','meta'));
 
         $title = 'Страница';

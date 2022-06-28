@@ -12,7 +12,7 @@
 
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="public/css/main.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script >
@@ -23,20 +23,12 @@
 <body>
 
     <div class="container">
-        <h1>Admin</h1>
-        <?php // debug($meta) 
-        ?>
-        <?php /* if (!empty($menu)) : */ // чтобы не выводил ошибки в отсутствии menu в main 
-        ?>
         <ul class="nav nav-pills">
-            <li><a href="page/about">About</a></li>
+            <li><a href="/page/about">About</a></li>
             <li><a href="/">Home</a></li>
             <li><a href="/admin">Admin</a></li>
-            <?php /*foreach ($menu as $item) :*/ ?>
-            <li><a href="category/<?php /*$item['id'] */ ?>"><?php /*$item['title']*/ ?></a></li>
-            <?php /* endforeach;*/ ?>
         </ul>
-        <?php /* endif; */ ?>
+        <h1>Admin</h1>
         <?= $content; ?>
         <!--  заметить что не <php а, убрали так как добавили RedBeans -->
         <?php // debug(vendor\core\Db::$countSql)

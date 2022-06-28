@@ -84,7 +84,7 @@ class ErrorHandler
     }
 }
 
-new ErrorHandler;
+// new ErrorHandler;
 // test();
 /*try{
     if(empty($test)){

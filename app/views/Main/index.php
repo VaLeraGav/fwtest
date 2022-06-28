@@ -50,8 +50,8 @@
                     // var data = JSON.parse(res); // получение json обекта
                     // $('#answer').html('<p>ответ: '+ data.answer + '| Код: ' + data.code +'</p>');
 
-                    // $('#answer').html(res)
-                    console.log(res)
+                    $('#answer').html(res)
+                    // console.log(res)
                 },
                 error: function() {
                     alert('Error');

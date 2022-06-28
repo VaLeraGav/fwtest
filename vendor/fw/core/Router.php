@@ -61,6 +61,7 @@ class Router
     public static function dispatch($url)
     {
         $url = self::removeQueryString($url);
+        
         if (self::matchRoute($url)) {
             // 'app\controllers\\'- нужно для пространства имен, добавили после добавления nemespace
             // 'app\controllers\admin\UserController' - в админской части
@@ -80,9 +81,11 @@ class Router
                 }
             } else {
                 // echo "<br>контроллер <b>$controller</b> не найден";
-                throw new \Exception("контроллер $controller не найден", 404);
+                throw new \Exception("контроллер <b>$controller</b> не найден", 404);
             }
         } else {
+            print_r("sdsd");
+
             // http_response_code(404);
             // include '404.html';
             throw new \Exception("Страница не найдена", 404);
@@ -97,11 +100,13 @@ class Router
         // $name=str_replace(' ', '',$name );
         return str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));
     }
+
     // приводит test-page -> testPage 
     protected static function lowerCamelCase($name)
     {
         return lcfirst(self::upperCamelCase($name));
     }
+    
     // обрезать url параметры 
     protected static function removeQueryString($url)
     {

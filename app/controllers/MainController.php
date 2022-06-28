@@ -51,8 +51,8 @@ class MainController extends AppController
         // $date = $model->findBySql("SELECT * FROM {$model->table} ORDER BY id DESC LIMIT 1");
         // $date = $model->findLike('Тест', 'title');
 
-        // $posts = \R::findAll('posts'); // не создаем model->...
-
+        $posts = \R::findAll('posts'); // не создаем model->...
+        $post = \R::findOne('posts', 'id = 1');
         // проверка Cache
         // App::$app->cache->set('posts', $posts, 3600 * 24); // сутки 
         // echo date('Y-m-d H:i', time() ); 

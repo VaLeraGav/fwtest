@@ -1,8 +1,0 @@
-[2022-05-29 13:10:12] Текст ошибки: ВВВ исключение | Файл: C:\OpenServer\domains\fwtest.local\public\test\error\index.php, | Строка: 81
-==========================
-[2022-05-29 13:10:24] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\public\test\error\index.php, | Строка: 79
-==========================
-[2022-05-29 13:11:54] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\domains\fwtest.local\public\test\error\index.php, | Строка: 70
-==========================
-[2022-05-29 17:18:38] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\public\test\error\index.php, | Строка: 79
-==========================

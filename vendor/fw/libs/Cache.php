@@ -25,10 +25,10 @@ class Cache
         }
         return false;
     }
+
     public function get($key)
     {
         $file = CACHE . '/' . md5($key) . 'txt';
-
         if (file_exists($file)) {
             // unserialize - создает значение PHP из сохраненного представления, Для превращения сериализованной строки обратно в PHP-значение, 
             $content = unserialize(file_get_contents($file));

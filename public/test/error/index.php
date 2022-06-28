@@ -21,12 +21,14 @@ class ErrorHendler
             error_reporting(0); // не показывать ошибки 
         }
         set_error_handler([$this, 'errorHeandler']); // set_error_handler — Задаёт пользовательский обработчик ошибок
+        ob_start();
         register_shutdown_function([$this, 'fatalErrorHendler']); // зарегестрировать функцию с  error_get_last
-        ob_start(); // для того чтобы не выводить ошибки от встроенного PHP, при фатальных
+         // для того чтобы не выводить ошибки от встроенного PHP, при фатальных
         set_exception_handler([$this, 'exceptionHandler']); // зарегестрировать собственный обработчик исключений, отдельно от других ошибок 
     }
     public function errorHeandler($errno, $errstr, $errfile, $errline)
     {
+        error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$errstr} | Файл: {$errfile}, | Строка: {$errline}\n==========================\n", 3, __DIR__ . '/errors.log');
         $this->displayError($errno, $errstr, $errfile, $errline);
         // var_dump($errno, $errstr, $errfile, $errline);
         return true; // false - нельзя, так как оброботка ошибок от PHP 
@@ -76,6 +78,6 @@ new ErrorHendler;
     var_dump($e);
 }*/
 
-throw new NotFoundException('Страница не найдена');
+// throw new NotFoundException('Страница не найдена');
 
-throw new Exception('ВВВ исключение', 404); // наш поймает ошибку, php нет  
+throw new Exception('ВВВ исключение', 503); // наш поймает ошибку, php нет  
