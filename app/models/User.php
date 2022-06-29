@@ -44,4 +44,24 @@ class User extends Model
         }
         return true;
     }
+
+
+    public function login(){
+        $login = !empty(trim($_POST['login'])) ? trim($_POST['login']) : null;
+        $password = !empty(trim($_POST['password'])) ? trim($_POST['password']) : null;
+        if($login && $password){
+            $user = \R::findOne('user', 'login = ? LIMIT 1', [$login]); // достаем по логину пользователя 
+            if($user){
+                if(password_verify($password, $user->password)) // сравниваем пороли с хэшем(пороль)
+                {
+                    foreach($user as $k => $v){
+                        if($k != 'password') // проверка что ключа нет, пороль не записываем 
+                            $_SESSION['user'][$k] = $v; // записываем в сессию параметры 
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

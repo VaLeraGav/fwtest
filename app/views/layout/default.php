@@ -49,6 +49,8 @@
             </div>
         <?php endif; ?>
 
+        <?php // debug($_SESSION) выведет все сессию ?>
+
         <?= $content; ?>
         <!--  заметить что не <php а, убрали так как добавили RedBeans -->
         <?php // debug(vendor\core\Db::$countSql)

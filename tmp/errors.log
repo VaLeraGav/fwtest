@@ -2,3 +2,5 @@
 ==========================
 [2022-06-29 12:41:28] Текст ошибки: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list' | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\libs\rb.php, | Строка: 720
 ==========================
+[2022-06-29 13:27:41] Текст ошибки: не найденC:\OpenServer\domains\fwtest.local/app/views/User/logout.php | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\base\View.php, | Строка: 41
+==========================
