@@ -81,6 +81,7 @@ abstract class Model
     }
 
     public function getErrors(){
+        // debug($this->errors);
         $errors = '<ul>';
         foreach($this->errors as $error){
             foreach($error as $item){
@@ -91,12 +92,13 @@ abstract class Model
         $_SESSION['error'] = $errors;
     }
 
+    // принимает таблицу 
     public function save($table){
-        $tbl = \R::dispense($table);
+        $tbl = \R::dispense($table); // создает объект, куда надо сохранить данные 
         foreach($this->attributes as $name => $value){
             $tbl->$name = $value;
         }
-        return \R::store($tbl);
+        return \R::store($tbl); // сохранить объект
     }
 
 

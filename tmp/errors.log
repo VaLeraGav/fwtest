@@ -1,0 +1,4 @@
+[2022-06-29 11:52:30] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-29 12:41:28] Текст ошибки: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list' | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\libs\rb.php, | Строка: 720
+==========================

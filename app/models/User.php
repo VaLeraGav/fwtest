@@ -30,6 +30,7 @@ class User extends Model
         ]
     ];
 
+    // проверка уникальности 
     public function checkUnique(){
         $user = \R::findOne('user', 'login = ? OR email = ? LIMIT 1', [$this->attributes['login'], $this->attributes['email']]);
         if($user){

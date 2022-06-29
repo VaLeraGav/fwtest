@@ -27,7 +27,7 @@ class View
     // подключение view шаблон и определять переменные из controller
     public function render($vars)
     {
-        $this->route['prefix'] = str_replace('\\', '/', $this->route['prefix']);
+        $this->route['prefix'] = str_replace('\\', '/', $this->route['prefix']); // для подключения вида, для admin
         // extract - извлекает эл массива и создает одноименные переменные  
         if (is_array($vars)) extract($vars);
         $file_view =  APP . "/views/{$this->route['prefix']}{$this->route['controller']}/{$this->view}.php"; // путь к нашему виду 

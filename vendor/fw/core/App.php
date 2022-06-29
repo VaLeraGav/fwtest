@@ -9,7 +9,7 @@ class App{
     public static $app;
 
     public function __construct() {
-        session_start(); // начали сессию
+        session_start(); // начили сессию
         self::$app= Registry::instance();
         new ErrorHandler();
     }
