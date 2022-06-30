@@ -1,70 +1,20 @@
-<div class="container">
-    <div id="answer"></div>
-    <button class="btn btn-default" id="send">Кнопка</button>
-    <br>
-
-    <!-- настройка menu, переопределение -->
-    <!-- <?php /*new \fw\widgets\menu\Menu([
-        'tpl' => WWW . '/menu/my_menu.php',
-        'container' => 'ul',
-        'table' => 'categories',
-        'cache' => 60,
-        'class' => 'my-menu',
-        'cacheKey' => 'menu_ul', 
-        
-    ]); */ ?> -->
-
-    <!-- <?php /*new \fw\widgets\menu\Menu([
-        'tpl' => WWW . '/menu/select.php',
-        'container' => 'select',
-        'table' => 'categories',
-        'cache' => 60,
-        'class' => 'my-select',
-        'cacheKey' => 'menu_select',
-    ]);*/ ?> -->
-
-
-    <?php if (!empty($posts)) :
-        foreach ($posts as $post) : ?>
-            <div class='panel panel-default'>
-                <div class='panel-heading'><?= $post['title'] ?></div>
-                <div class='panel-body'><?= $post['text'] ?></div>
+<?php if (!empty($posts)) : ?>
+    <?php foreach ($posts as $post) : ?>
+        <div class="content-grid-info">
+            <img src="/blog/images/post1.jpg" alt="" />
+            <div class="post-info">
+                <h4><a href="<?= $post->id; ?>"><?= $post->title; ?></a> July 30, 2014 / 27 Comments</h4>
+                <p><?= $post->excerpt; ?></p>
+                <a href="<?= $post->id; ?>"><span></span>READ MORE</a>
             </div>
-        <?php endforeach; ?>
-
-        <div class="text-center">
-            <p>Статей: <?= count($posts); ?> из <?= $total; ?> </p>
-            <?php if($pagination->countPages > 1) : ?>
-                <?= $pagination; ?>
-            <?php endif; ?>
         </div>
-
-    <?php endif; ?>
-</div>
-<script src="/js/test.js"></script>
-<script>
-    // должен быть после подключения библиотеки jquery
-    $(function() {
-        $('#send').click(function() {
-            $.ajax({
-                url: '/main/test', // куда будет илти ajax запрос 
-                type: 'post',
-                data: {
-                    'id': 2
-                }, // данные которые хотим получить, пост с id=2 
-                success: function(res) // при получении ответа 
-                {
-                    // вывод на экран массив
-                    // var data = JSON.parse(res); // получение json обекта
-                    // $('#answer').html('<p>ответ: '+ data.answer + '| Код: ' + data.code +'</p>');
-
-                    $('#answer').html(res)
-                    // console.log(res)
-                },
-                error: function() {
-                    alert('Error');
-                }
-            });
-        });
-    });
-</script>
+    <?php endforeach; ?>
+    <div class="text-center">
+        <p>Статей: <?= count($posts); ?> из <?= $total; ?></p>
+        <?php if ($pagination->countPages > 1) : ?>
+            <?= $pagination; ?>
+        <?php endif; ?>
+    </div>
+<?php else : ?>
+    <h3>Posts not found...</h3>
+<?php endif; ?>

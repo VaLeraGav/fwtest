@@ -84,8 +84,6 @@ class Router
                 throw new \Exception("контроллер <b>$controller</b> не найден", 404);
             }
         } else {
-            print_r("sdsd");
-
             // http_response_code(404);
             // include '404.html';
             throw new \Exception("Страница не найдена", 404);

@@ -71,7 +71,7 @@ class View
         ob_clean();
         // $content = ob_get_clean(); // все echo и require записалось в эту переменную, все содержание нашего view,убрали когда добавили сжатие 
         if (false !== $this->layout) {
-            $file_layout = APP . "/views/layout/{$this->layout}.php";
+            $file_layout = APP . "/views/layouts/{$this->layout}.php";
             if (is_file($file_layout)) {
                 $content = $this->getScript($content);  // усли убрать то все скрипты уберуться
                 $scripts = []; //  будет хранится script
@@ -102,9 +102,9 @@ class View
     // возвращает в html 
     public static function getMeta()
     {
-        echo '<title>' . self::$meta['title'] . '</title> 
-        <meta name="description" contant="' . self::$meta['desc'] . '">
-        <meta name="keywords" contant="' . self::$meta['keywords'] . '"';
+        echo '<title>' . self::$meta['title'] . '</title>
+        <meta name="description" content="' . self::$meta['desc'] . '">
+        <meta name="keywords" content="' . self::$meta['keywords'] . '">';
     }
 
     // устанавливает 
@@ -113,5 +113,18 @@ class View
         self::$meta['title'] = $title;
         self::$meta['desc'] = $desc;
         self::$meta['keywords'] = $keywords;
+    }
+
+
+    public function getPart($file)
+    {
+        if (false !== $this->layout) {
+            $file = APP . "/views/{$file}.php";
+            if (is_file($file)) {
+                require_once $file;
+            } else {
+                echo "не найден файл $file";
+            }
+        }
     }
 }
