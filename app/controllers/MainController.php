@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\models\Main;
 use fw\core\App;
 use fw\core\base\View;
-
+use fw\libs\Pagination;
 use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -31,10 +31,16 @@ class MainController extends AppController
         // $this->set(['name'=>$name, 'color'=>"red"]);
         $model = new Main;
 
+        $total = \R::count('posts');
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $perpage = 2;
+        $pagination = new Pagination($page,$perpage,$total);
+        $start = $pagination->getStart();
+
         // \R::fancyDebug(true); // проерка запросов 
         // cache дольжен находиться как можно выше
 
-        $posts = \R::findAll('posts');
+        $posts = \R::findAll('posts', "LIMIT $start, $perpage");
 
         // кэширование
         // $posts =  App::$app->cache->get('posts');     
@@ -51,8 +57,8 @@ class MainController extends AppController
         // $date = $model->findBySql("SELECT * FROM {$model->table} ORDER BY id DESC LIMIT 1");
         // $date = $model->findLike('Тест', 'title');
 
-        $posts = \R::findAll('posts'); // не создаем model->...
-        $post = \R::findOne('posts', 'id = 1');
+        // $posts = \R::findAll('posts'); // не создаем model->..., все посты выводит 
+        // $post = \R::findOne('posts', 'id = 1');
         // проверка Cache
         // App::$app->cache->set('posts', $posts, 3600 * 24); // сутки 
         // echo date('Y-m-d H:i', time() ); 
@@ -69,7 +75,7 @@ class MainController extends AppController
         View::setMeta('Главная страница', 'Описание страницы', 'Ключевые слова');
 
         // compact — Создаёт массив, содержащий названия переменных и их значения
-        $this->set(compact('title', 'posts', 'menu', 'meta'));
+        $this->set(compact('title', 'posts', 'menu', 'meta', 'pagination', 'total'));
 
 
         // create a log channel

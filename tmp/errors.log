@@ -4,3 +4,7 @@
 ==========================
 [2022-06-29 13:27:41] Текст ошибки: не найденC:\OpenServer\domains\fwtest.local/app/views/User/logout.php | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\base\View.php, | Строка: 41
 ==========================
+[2022-06-29 14:21:49] Текст ошибки: ob_start(): class 'fw\core\base\View' does not have a method 'ob_gzhandler' | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\base\View.php, | Строка: 58
+==========================
+[2022-06-29 21:18:11] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================

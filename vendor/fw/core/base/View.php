@@ -24,6 +24,28 @@ class View
         $this->view = $view;
     }
 
+    // сжатие данных
+    public function compressPage($buffer)
+    {
+        $search = [
+            "/(\n)+/",
+            "/\r\n+/",
+            "/\n(\t)+/",
+            "/\n(\ )+/",
+            "/\>(\n)+</",
+            "/\>\r\n</",
+        ];
+        $replace = [
+            "\n",
+            "\n",
+            "\n",
+            "\n",
+            '><',
+            '><',
+        ];
+        return $buffer = preg_replace($search, $replace, $buffer);
+    }
+
     // подключение view шаблон и определять переменные из controller
     public function render($vars)
     {
@@ -33,14 +55,21 @@ class View
         $file_view =  APP . "/views/{$this->route['prefix']}{$this->route['controller']}/{$this->view}.php"; // путь к нашему виду 
         // ob_start — Включение буферизации вывода
         // Если буферизация вывода активна, никакой вывод скрипта не отправляется (кроме заголовков), а сохраняется во внутреннем буфере.
-        ob_start();
-        if (is_file($file_view)) {
-            require $file_view;
-        } else {
-            // echo "<p>не найден{$file_view}</p>";
-            throw new \Exception("не найден{$file_view}", 404);
+        ob_start([$this, 'compressPage']); // пользовательское сжатие 
+        // ob_start('ob_gzhandler');
+        {
+            // header('Content-Encoding: gzip'); // для ob_gzhandler
+            if (is_file($file_view)) {
+                require $file_view;
+            } else {
+                // echo "<p>не найден{$file_view}</p>";
+                throw new \Exception("не найден{$file_view}", 404);
+            }
         }
-        $content = ob_get_clean(); // все echo и require записалось в эту переменную, все содержание нашего view
+
+        $content = ob_get_contents();
+        ob_clean();
+        // $content = ob_get_clean(); // все echo и require записалось в эту переменную, все содержание нашего view,убрали когда добавили сжатие 
         if (false !== $this->layout) {
             $file_layout = APP . "/views/layout/{$this->layout}.php";
             if (is_file($file_layout)) {
@@ -53,17 +82,17 @@ class View
             } else {
                 // echo "<p>не найден шаблон <b>$file_layout</b></p>";
                 throw new \Exception("не найден шаблон $file_layout", 404);
-            
             }
         }
     }
     // $content - все содержимое нашего view
     // вырезает наши скрипты так как ошибка : $ is not defined
     // script должен находиться снизу 
-    protected function getScript($content){
+    protected function getScript($content)
+    {
         $pattern = "#<script.*?>.*?</script>#si";
         preg_match_all($pattern, $content, $this->scripts);
-        if (!empty($this->scripts)){
+        if (!empty($this->scripts)) {
             $content = preg_replace($pattern, '', $content);
         }
         return $content;
@@ -73,9 +102,9 @@ class View
     // возвращает в html 
     public static function getMeta()
     {
-        echo '<title>'. self::$meta['title'] .'</title> 
-        <meta name="description" contant="'.self::$meta['desc'].'">
-        <meta name="keywords" contant="'.self::$meta['keywords'].'"';
+        echo '<title>' . self::$meta['title'] . '</title> 
+        <meta name="description" contant="' . self::$meta['desc'] . '">
+        <meta name="keywords" contant="' . self::$meta['keywords'] . '"';
     }
 
     // устанавливает 

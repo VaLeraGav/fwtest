@@ -2,7 +2,7 @@
     <div id="answer"></div>
     <button class="btn btn-default" id="send">Кнопка</button>
     <br>
-    
+
     <!-- настройка menu, переопределение -->
     <!-- <?php /*new \fw\widgets\menu\Menu([
         'tpl' => WWW . '/menu/my_menu.php',
@@ -12,7 +12,7 @@
         'class' => 'my-menu',
         'cacheKey' => 'menu_ul', 
         
-    ]); */?> -->
+    ]); */ ?> -->
 
     <!-- <?php /*new \fw\widgets\menu\Menu([
         'tpl' => WWW . '/menu/select.php',
@@ -31,6 +31,14 @@
                 <div class='panel-body'><?= $post['text'] ?></div>
             </div>
         <?php endforeach; ?>
+
+        <div class="text-center">
+            <p>Статей: <?= count($posts); ?> из <?= $total; ?> </p>
+            <?php if($pagination->countPages > 1) : ?>
+                <?= $pagination; ?>
+            <?php endif; ?>
+        </div>
+
     <?php endif; ?>
 </div>
 <script src="/js/test.js"></script>
