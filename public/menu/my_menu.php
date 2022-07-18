@@ -1,0 +1,10 @@
+<!--если есть еще ветка то вызываем рекурсивно  -->
+<li class='test'>
+    <a href="?id=<?= $id; ?>"><?= $category['title']; ?></a>
+
+    <?php if (isset($category['childs'])) : ?>
+        <ul>
+            <?= $this->getMenuHtml($category['childs']); ?>
+        </ul>
+    <?php endif; ?>
+</li>

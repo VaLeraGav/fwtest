@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 class PostsController extends AppController{
-    public $layout = "test";
+    //public $layout = "test";
     // перенесли в Controllers.php
     // public $route= []; // получаем controllers, action
     // public function __construct($route)
@@ -15,6 +15,6 @@ class PostsController extends AppController{
     
     public function testAction(){
         debug($this->route);
-        echo "Posts : test ";
+        echo 'Posts : test ';
     }
 }

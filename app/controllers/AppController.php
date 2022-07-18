@@ -2,7 +2,7 @@
 // нужен чтобы не лазить в ядро сайта а будем пользоваться на уровне приложения 
 namespace app\controllers;
 
-use vendor\core\base\Controller;
+use fw\core\base\Controller;
 
 class AppController extends Controller
 {
@@ -20,13 +20,12 @@ class AppController extends Controller
         // }
         
         new \app\models\Main; // для инициализации(соеднинени с БД)
-        $this->menu = \R::FindAll('category');
+        $this->menu = \R::findAll('category');
     }
 
-    protected function setMeta($title = '', $desc = '', $keywords = '')
-    {
-        $this->meta['title']=$title;
-        $this->meta['desc']=$desc;
-        $this->meta['keywords']=$keywords;
+    protected function setMeta($title = '', $desc = '', $keywords = ''){
+        $this->meta['title'] = $title;
+        $this->meta['desc'] = $desc;
+        $this->meta['keywords'] = $keywords;
     }
 }

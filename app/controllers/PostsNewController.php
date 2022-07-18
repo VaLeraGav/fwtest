@@ -13,7 +13,7 @@ class PostsNewController extends AppController
         echo "PostsNew : test ";
     }
     // метод который к которому нет доступа у пользователя 
-    public function defore()
+    public function before()
     {
         echo "PostsNew : defore ";
     }

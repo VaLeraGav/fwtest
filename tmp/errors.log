@@ -1,0 +1,46 @@
+[2022-06-29 11:52:30] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-29 12:41:28] Текст ошибки: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list' | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\libs\rb.php, | Строка: 720
+==========================
+[2022-06-29 13:27:41] Текст ошибки: не найденC:\OpenServer\domains\fwtest.local/app/views/User/logout.php | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\base\View.php, | Строка: 41
+==========================
+[2022-06-29 14:21:49] Текст ошибки: ob_start(): class 'fw\core\base\View' does not have a method 'ob_gzhandler' | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\base\View.php, | Строка: 58
+==========================
+[2022-06-29 21:18:11] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 09:50:14] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 09:50:14] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 09:50:14] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 09:50:14] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 09:50:14] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 09:50:14] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 09:50:14] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 09:50:14] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 09:50:14] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 11:19:27] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 11:19:32] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 11:26:07] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 11:26:17] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 11:30:42] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 11:37:58] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 11:46:17] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 11:56:26] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 91
+==========================
+[2022-06-30 11:56:52] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\domains\fwtest.local\vendor\fw\core\Router.php, | Строка: 89
+==========================
