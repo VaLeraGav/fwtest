@@ -10,7 +10,7 @@ class Registry
     // protected static $instance;
 
 
-    // в контейнере $object будет находиться обектс именем cache and test
+    // в контейнере $object будет находиться обект с именем cache and test
     protected function __construct()
     {
     require ROOT . '/config/config.php';
